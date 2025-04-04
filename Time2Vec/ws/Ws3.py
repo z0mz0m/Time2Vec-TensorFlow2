@@ -133,12 +133,12 @@ if __name__ == "__main__":
     custom_headers = {
         'User-Agent': 'My User Agent',
         'Authorization': 'Bearer your-token-here',
-        'X-MBX-APIKEY': 'PPAERxmMrVEWcNkpyVBCzyYfTWqyuj2IqY8B0fjKn5o56hlZCxwWAof9VeZu3Z11'
+        'X-MBX-APIKEY': '...'
     }
 
 
 
-    ws = websocket.WebSocketApp("wss://stream-sbe.binance.com/ws/btcusdt@trade",
+    ws = websocket.WebSocketApp("wss://stream-sbe.binance.com/stream?streams=btcusdt@depth20/btcusdt@depth",
                                 header=custom_headers,
                                 on_open=on_open,
                               on_message=on_message,

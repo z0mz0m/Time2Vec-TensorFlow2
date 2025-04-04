@@ -109,7 +109,7 @@ if __name__ == "__main__":
     custom_headers = {
         'User-Agent': 'My User Agent',
         'Authorization': 'Bearer your-token-here',
-        'X-MBX-APIKEY': 'PPAERxmMrVEWcNkpyVBCzyYfTWqyuj2IqY8B0fjKn5o56hlZCxwWAof9VeZu3Z11'
+        'X-MBX-APIKEY': '...'
     }
 
 
