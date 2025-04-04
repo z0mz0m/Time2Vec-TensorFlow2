@@ -18,7 +18,7 @@
 
         <composite name="groupSizeEncoding" description="Repeating group dimensions.">
             <type name="blockLength" primitiveType="uint16"/>
-            <type name="numInGroup" primitiveType="uint32" maxValue="2147483647"/>
+            <type name="numInGroup" primitiveType="uint16" maxValue="65535"/>
         </composite>
 
         <composite name="groupSize16Encoding" description="Repeating group dimensions.">
