@@ -17,8 +17,8 @@
         </composite>
 
         <composite name="groupSizeEncoding" description="Repeating group dimensions.">
-            <type name="blockLength" primitiveType="uint16"/>
-            <type name="numInGroup" primitiveType="uint16" maxValue="65535"/>
+            <type name="blockLength" primitiveType="uint32"/>
+            <type name="numInGroup" primitiveType="uint32" maxValue="2147483647"/>
         </composite>
 
         <composite name="groupSize16Encoding" description="Repeating group dimensions.">
@@ -52,20 +52,21 @@
     </types>
 
     <!-- Stream event for "trade@<symbol>" channel -->
-    <sbe:message name="TradesStreamEvent" id="10000">
-        <field id="1" name="eventTime" type="utcTimestampUs"/>
-        <field id="2" name="transactTime" type="utcTimestampUs"/>
-        <field id="3" name="priceExponent" type="exponent8"/>
-        <field id="4" name="qtyExponent" type="exponent8"/>
-        <group id="100" name="trades">
-            <field id="1" name="id" type="tradeId"/>
-            <field id="2" name="price" type="mantissa64" mbx:exponent="priceExponent"/>
-            <field id="3" name="qty" type="mantissa64" mbx:exponent="qtyExponent"/>
-            <field id="4" name="isBuyerMaker" type="boolEnum"/>
-            <field id="5" name="isBestMatch" type="boolEnum" presence="constant" valueRef="boolEnum.True"/>
-        </group>
-        <data id="200" name="symbol" type="varString8"/>
-    </sbe:message>
+   <sbe:message name="TradesStreamEvent" id="10000" blockLength="18">
+    <field id="1" name="eventTime" type="utcTimestampUs"/>
+    <field id="2" name="transactTime" type="utcTimestampUs"/>
+    <field id="3" name="priceExponent" type="exponent8"/>
+    <field id="4" name="qtyExponent" type="exponent8"/>
+    <group id="100" name="trades" dimensionType="groupSize16Encoding">
+        <field id="1" name="id" type="tradeId"/>
+        <field id="2" name="price" type="mantissa64" mbx:exponent="priceExponent"/>
+        <field id="3" name="qty" type="mantissa64" mbx:exponent="qtyExponent"/>
+        <field id="4" name="isBuyerMaker" type="boolEnum"/>
+        <field id="5" name="isBestMatch" type="boolEnum" presence="constant" valueRef="boolEnum.True"/>
+    </group>
+    <data id="200" name="symbol" type="varString8"/>
+</sbe:message>
+
 
     <!-- Stream event for "bestBidAsk@<symbol>" channel -->
     <sbe:message name="BestBidAskStreamEvent" id="10001">

@@ -52,66 +52,69 @@ _schema = load_schema()
 
 def on_message(ws, message):
     """WebSocket message handler"""
-    try:
-        if _schema is None:
-            # Try loading schema again if it failed initially
-            if load_schema() is None:
-                logger.error("Cannot process message - SBE schema not available")
-                return
+    if isinstance(message, bytes):
+        print("received binary message:",message)
+        try:
+            if _schema is None:
+                # Try loading schema again if it failed initially
+                if load_schema() is None:
+                    logger.error("Cannot process message - SBE schema not available")
+                    return
+            print("starting decode binary message:")
+            # Process the message with the schema
+            #decoder = _schema.get_message_decoder(message)
+            decoded_data = _schema.decode(message)
+            print("decoded binary message:", decoded_data)
 
-        # Process the message with the schema
-        #decoder = _schema.get_message_decoder(message)
-        decoded_data = _schema.decode(message)
+            # Print symbol information
+            symbol_info = decoded_data.value.get('symbol', {})
+            if symbol_info:
+                print("\nSymbol section:")
+                print(f"Symbol length field (1 byte): {symbol_info['length']}")
 
-        # Print symbol information
-        symbol_info = decoded_data.value.get('symbol', {})
-        if symbol_info:
-            print("\nSymbol section:")
-            print(f"Symbol length field (1 byte): {symbol_info['length']}")
+                if isinstance(symbol_info['varData'], bytes):
+                    symbol = symbol_info['varData'].decode('utf-8')
+                elif isinstance(symbol_info['varData'], int):
+                    symbol = chr(symbol_info['varData'])
+                else:
+                    symbol = str(symbol_info['varData'])
 
-            if isinstance(symbol_info['varData'], bytes):
-                symbol = symbol_info['varData'].decode('utf-8')
-            elif isinstance(symbol_info['varData'], int):
-                symbol = chr(symbol_info['varData'])
+                print(f"Symbol data ({len(symbol)} bytes): {symbol}")
+                print(f"Total symbol section length: {1 + len(symbol)} bytes")  # length byte + data
+
+            print("\nFull decoded message structure:")
+            for key, value in decoded_data.value.items():
+                if isinstance(value, dict):
+                    print(f"{key}:")
+                    for k, v in value.items():
+                        print(f"  {k}: {v}")
+                else:
+                    print(f"{key}: {value}")
+
+        except Exception as e:
+            global _error_count, _error_types
+
+            # Track error type
+            error_type = type(e).__name__
+            if error_type not in _error_types:
+                _error_types[error_type] = 1
             else:
-                symbol = str(symbol_info['varData'])
+                _error_types[error_type] += 1
 
-            print(f"Symbol data ({len(symbol)} bytes): {symbol}")
-            print(f"Total symbol section length: {1 + len(symbol)} bytes")  # length byte + data
+            _error_count += 1
 
-        print("\nFull decoded message structure:")
-        for key, value in decoded_data.value.items():
-            if isinstance(value, dict):
-                print(f"{key}:")
-                for k, v in value.items():
-                    print(f"  {k}: {v}")
-            else:
-                print(f"{key}: {value}")
+            # Full logging for first few errors
+            if _error_count <= 10:
+                error_trace = traceback.format_exc()
+                logger.error(f"Error #{_error_count}: {e}")
+                logger.error(f"Traceback: {error_trace}")
 
-    except Exception as e:
-        global _error_count, _error_types
-
-        # Track error type
-        error_type = type(e).__name__
-        if error_type not in _error_types:
-            _error_types[error_type] = 1
-        else:
-            _error_types[error_type] += 1
-
-        _error_count += 1
-
-        # Full logging for first few errors
-        if _error_count <= 10:
-            error_trace = traceback.format_exc()
-            logger.error(f"Error #{_error_count}: {e}")
-            logger.error(f"Traceback: {error_trace}")
-
-            # Log message details
-            if isinstance(message, bytes):
-                logger.error(f"Message sample (hex): {message[:50].hex()}")
-        elif _error_count % 100 == 0:
-            # Periodic summary
-            logger.error(f"Total of {_error_count} errors. Types: {_error_types}")
+                # Log message details
+                if isinstance(message, bytes):
+                    logger.error(f"Message sample (hex): {message[:50].hex()}")
+            elif _error_count % 100 == 0:
+                # Periodic summary
+                logger.error(f"Total of {_error_count} errors. Types: {_error_types}")
 
 
 
