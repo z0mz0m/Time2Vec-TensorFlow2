@@ -133,16 +133,16 @@ if __name__ == "__main__":
     custom_headers = {
         'User-Agent': 'My User Agent',
         'Authorization': 'Bearer your-token-here',
-        'X-MBX-APIKEY': '...'
+        'X-MBX-APIKEY': 'e6EIY7HRHkTFJlsBsAi2ICQ6oEh71HvqbJH1p96h29BqBpVLL6rM0vBUZyODitps'
     }
 
 
 
     ws = websocket.WebSocketApp("wss://stream-sbe.binance.com/stream?streams=btcusdt@depth20/btcusdt@depth",
-                                header=custom_headers,
-                                on_open=on_open,
+                              header=custom_headers,
+                              on_open=on_open,
                               on_message=on_message,
-                                on_error=on_error,
+                              on_error=on_error,
                               on_close=on_close)
 
     ws.run_forever(dispatcher=rel, reconnect=5)  # Set dispatcher to automatic reconnection, 5 second reconnect delay if connection closed unexpectedly

@@ -2,6 +2,8 @@ import os
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+import tf2onnx
+
 
 # Try to set up GPU if available
 os.environ['CUDA_VISIBLE_DEVICES'] = '1'
@@ -96,3 +98,25 @@ model.fit(
 )
 
 history = model.evaluate(ts_X1, ts_y)
+
+# Convert to ONNX
+
+model.save('general_lstm.keras')
+
+model.save('general_lstm_onnx.h5')
+model.save('general_lstm_onnx.keras')
+
+
+# Load the model
+model = keras.models.load_model('general_lstm_onnx.keras')
+
+# Define the correct input signature for general_lstm (single input)
+input_signature = [
+    tf.TensorSpec([None, SEQ_LEN, 1], tf.float32, name="input_1")
+]
+
+# Convert to ONNX
+onnx_model, _ = tf2onnx.convert.from_keras(model, input_signature, opset=13)
+with open("model_general_lstm.onnx", "wb") as f:
+    f.write(onnx_model.SerializeToString())
+

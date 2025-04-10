@@ -1,0 +1,266 @@
+2025-04-04 07:50:10,521 - websocket - DEBUG - --- request header ---
+2025-04-04 07:50:10,521 - websocket - DEBUG - GET /ws/btcusdt@trade HTTP/1.1
+Upgrade: websocket
+Host: stream-sbe.binance.com
+Origin: https://stream-sbe.binance.com
+Sec-WebSocket-Key: pg07+aCk0weivYUk8tgDTA==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+User-Agent: My User Agent
+Authorization: Bearer your-token-here
+X-MBX-APIKEY: PPAERxmMrVEWcNkpyVBCzyYfTWqyuj2IqY8B0fjKn5o56hlZCxwWAof9VeZu3Z11
+
+
+2025-04-04 07:50:10,521 - websocket - DEBUG - -----------------------
+2025-04-04 07:50:10,521 - websocket - DEBUG - --- response header ---
+2025-04-04 07:50:10,758 - websocket - DEBUG - HTTP/1.1 101 Switching Protocols
+2025-04-04 07:50:10,758 - websocket - DEBUG - Date: Fri, 04 Apr 2025 05:50:11 GMT
+2025-04-04 07:50:10,758 - websocket - DEBUG - Connection: upgrade
+2025-04-04 07:50:10,758 - websocket - DEBUG - Upgrade: websocket
+2025-04-04 07:50:10,758 - websocket - DEBUG - Sec-WebSocket-Accept: tpnAgTPXxBf2FrxU0RcPu8q4NDw=
+2025-04-04 07:50:10,758 - websocket - DEBUG - -----------------------
+2025-04-04 07:50:10,758 - websocket - INFO - Websocket connected
+2025-04-04 07:50:11,135 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00;\x93\xaeu\xed1\x06\x00\xdd\x90\xaeu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00`V\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x000W\x05\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,135 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00;\x93\xaeu\xed1\x06\x00\xdd\x90\xaeu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00`V\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x000W\x05\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,142 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:11,143 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:11,143 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:11,217 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00m\xd1\xafu\xed1\x06\x00\x82\xcf\xafu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00aV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00P\xce\x13\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:11,217 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00m\xd1\xafu\xed1\x06\x00\x82\xcf\xafu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00aV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00P\xce\x13\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:11,218 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:11,218 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:11,218 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:11,427 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00<\xff\xb2u\xed1\x06\x00\xd3\xfc\xb2u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00bV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\xd8Y\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,427 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00<\xff\xb2u\xed1\x06\x00\xd3\xfc\xb2u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00bV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\xd8Y\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,428 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:11,428 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:11,428 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:11,768 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\xac8\xb8u\xed1\x06\x00p7\xb8u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00cV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\x80>\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,768 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\xac8\xb8u\xed1\x06\x00p7\xb8u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00cV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\x80>\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,770 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:11,770 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:11,770 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:11,789 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00Hx\xb8u\xed1\x06\x00\xcfv\xb8u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00dV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\x80>\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,789 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00Hx\xb8u\xed1\x06\x00\xcfv\xb8u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00dV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\x80>\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:11,789 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:11,789 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:11,789 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:11,792 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\x0e\x97\xb8u\xed1\x06\x00\xb3\x95\xb8u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00eV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xb06\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:11,792 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\x0e\x97\xb8u\xed1\x06\x00\xb3\x95\xb8u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00eV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xb06\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:11,793 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:11,793 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:11,793 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:13,345 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00~H\xd0u\xed1\x06\x00\xc0F\xd0u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00fV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00`m\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:13,345 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00~H\xd0u\xed1\x06\x00\xc0F\xd0u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00fV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00`m\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:13,349 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:13,350 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:13,350 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:13,641 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\xb6\xc9\xd4u\xed1\x06\x00\xd8\xc7\xd4u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00gV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xa8+\t\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:13,641 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\xb6\xc9\xd4u\xed1\x06\x00\xd8\xc7\xd4u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00gV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xa8+\t\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:13,642 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:13,642 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:13,642 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:13,787 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\xc0\x01\xd7u\xed1\x06\x00\x0c\xff\xd6u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00hV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xe0.\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:13,787 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\xc0\x01\xd7u\xed1\x06\x00\x0c\xff\xd6u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00hV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xe0.\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:13,788 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:13,788 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:13,788 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:14,397 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00zT\xe0u\xed1\x06\x00\x1cS\xe0u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00iV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\x80\xbb\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:14,397 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00zT\xe0u\xed1\x06\x00\x1cS\xe0u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00iV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\x80\xbb\x00\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:14,399 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:14,400 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:14,400 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:14,730 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\xbel\xe5u\xed1\x06\x00rj\xe5u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00jV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\x90\xdc\x01\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:14,730 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\xbel\xe5u\xed1\x06\x00rj\xe5u\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00jV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\x90\xdc\x01\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:14,732 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:14,732 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:14,732 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:14,909 - websocket - DEBUG - ++Rcv raw: b'\x89\r1743745815422'
+2025-04-04 07:50:14,909 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=9 data=b'1743745815422'
+2025-04-04 07:50:14,909 - websocket - DEBUG - ++Sent raw: b'\x8a\x8d\x9f\xdc/\xac\xae\xeb\x1b\x9f\xa8\xe8\x1a\x94\xae\xe9\x1b\x9e\xad'
+2025-04-04 07:50:14,909 - websocket - DEBUG - ++Sent decoded: fin=1 opcode=10 data=b'1743745815422'
+2025-04-04 07:50:15,119 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\xc0Y\xebu\xed1\x06\x00\x13X\xebu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00kV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\xe0\x1b\x18\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:15,119 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\xc0Y\xebu\xed1\x06\x00\x13X\xebu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00kV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\xe0\x1b\x18\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:15,120 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:15,120 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:15,120 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:15,213 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\x06\xc8\xecu\xed1\x06\x00#\xc6\xecu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00lV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\xc8[\x0e\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:15,213 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\x06\xc8\xecu\xed1\x06\x00#\xc6\xecu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00lV\x93\x1c\x01\x00\x00\x00@dD\x9e\x8f\x07\x00\x00\xc8[\x0e\x00\x00\x00\x00\x00\x01\x07BTCUSDT"
+2025-04-04 07:50:15,214 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:15,214 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:15,214 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:15,262 - websocket - DEBUG - ++Rcv raw: b"\x82~\x00\xd7\x12\x00\x10'\x01\x00\x00\x00\xc5\x88\xedu\xed1\x06\x00j\x86\xedu\xed1\x06\x00\xf8\xf8\x19\x00\x07\x00\x00\x00mV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00h\xbf\x00\x00\x00\x00\x00\x00\x00nV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00h\xbf\x00\x00\x00\x00\x00\x00\x00oV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00P\xc3\x00\x00\x00\x00\x00\x00\x00pV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\x90_\x01\x00\x00\x00\x00\x00\x00qV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00xc\x01\x00\x00\x00\x00\x00\x00rV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00 \xbf\x02\x00\x00\x00\x00\x00\x00sV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xa0\xa9\x10\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:15,262 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\xc5\x88\xedu\xed1\x06\x00j\x86\xedu\xed1\x06\x00\xf8\xf8\x19\x00\x07\x00\x00\x00mV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00h\xbf\x00\x00\x00\x00\x00\x00\x00nV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00h\xbf\x00\x00\x00\x00\x00\x00\x00oV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00P\xc3\x00\x00\x00\x00\x00\x00\x00pV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\x90_\x01\x00\x00\x00\x00\x00\x00qV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00xc\x01\x00\x00\x00\x00\x00\x00rV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00 \xbf\x02\x00\x00\x00\x00\x00\x00sV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xa0\xa9\x10\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:15,264 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:15,264 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:15,264 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:15,356 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\xaf\xf9\xeeu\xed1\x06\x00\xe7\xf7\xeeu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00tV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\x98\xb7\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:15,356 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\xaf\xf9\xeeu\xed1\x06\x00\xe7\xf7\xeeu\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00tV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\x98\xb7\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:15,357 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:15,357 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:15,357 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
+2025-04-04 07:50:16,701 - websocket - DEBUG - ++Rcv raw: b"\x82A\x12\x00\x10'\x01\x00\x00\x00\x96|\x03v\xed1\x06\x00\x10{\x03v\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00uV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xc0]\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:16,701 - websocket - DEBUG - ++Rcv decoded: fin=1 opcode=2 data=b"\x12\x00\x10'\x01\x00\x00\x00\x96|\x03v\xed1\x06\x00\x10{\x03v\xed1\x06\x00\xf8\xf8\x19\x00\x01\x00\x00\x00uV\x93\x1c\x01\x00\x00\x00\x80\xa6S\x9e\x8f\x07\x00\x00\xc0]\x00\x00\x00\x00\x00\x00\x00\x07BTCUSDT"
+2025-04-04 07:50:16,702 - websocket_handler - ERROR - Error in on_message: 
+2025-04-04 07:50:16,702 - websocket_handler - ERROR - Traceback: Traceback (most recent call last):
+  File "C:\Users\eugen\PycharmProjects\Time2Vec-TensorFlow2\Time2Vec\ws\Ws2.py", line 50, in on_message
+    decoded_data = schema.decode(binary_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 535, in decode
+    part = _unpack_format(self, f, '', buffer[body_offset:], cursor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\eugen\PycharmProjects\quant\.venv\Lib\site-packages\sbe\__init__.py", line 601, in _unpack_format
+    assert buffer_cursor.val <= cursor0 + dimension.value['blockLength']
+AssertionError
+
+2025-04-04 07:50:16,702 - websocket_handler - ERROR - Message that caused error (type: <class 'bytes'>)
